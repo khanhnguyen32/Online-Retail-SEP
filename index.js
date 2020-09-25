@@ -12,6 +12,13 @@ let hbs = expressHbs.create({
     layoutsDir: __dirname + "/view/layouts",
     partialsDir: __dirname + '/views/partials/'
 });
+app.engine('hbs, hbs.engine');
+app.set('view engine', 'hbs');
+
+//Define routes
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 //Set Server Port & Start Server
 app.set('port',process.env.PORT || 5000);
