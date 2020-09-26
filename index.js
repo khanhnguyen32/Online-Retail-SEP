@@ -23,14 +23,23 @@ app.get('/', (req, res) => {
 app.get('/:page', (req, res) => {
     let banners = {
         blog: 'Our Blog',
-        category: 'Category'
-    }
+        cart: 'Shopping Cart',
+        category: 'Shop Category',
+        checkout: 'Product Checkout',
+        confirmation: 'Order Confirmation',
+        contact: 'Contact Us',
+        login: 'Login / Register',
+        register: 'Register',
+        singleblog: 'Blog Details',
+        singleproduct: 'Shop Single',
+        trackingorder: 'Order Tracking'
+    };
     let page = req.params.page; 
-    res.render('page', {banner: banners[page]});
+    res.render(page, {banner: banners[page]});
 });
 
 //Set Server Port & Start Server
 app.set('port',process.env.PORT || 5000);
 app.listen(app.get('port'), () =>{
     console.log(`Server is rungning at port ${app.get('port')}`);
-})
+});
