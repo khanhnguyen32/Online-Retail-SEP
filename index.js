@@ -25,3 +25,6 @@ app.set('port',process.env.PORT || 5000);
 app.listen(app.get('port'), () =>{
     console.log(`Server is rungning at port ${app.get('port')}`);
 })
+
+//TEST 
+app.set('view', 'hello');
