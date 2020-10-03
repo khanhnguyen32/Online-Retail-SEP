@@ -20,6 +20,14 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/sync', (req, res) => {
+    let models = require('./models');
+    models.sequelize.sync()
+        .then(() => {
+            res.send('database sync completed!')
+        });
+});
+
 app.get('/:page', (req, res) => {
     let banners = {
         blog: 'Our Blog',
@@ -34,12 +42,12 @@ app.get('/:page', (req, res) => {
         singleproduct: 'Shop Single',
         trackingorder: 'Order Tracking'
     };
-    let page = req.params.page; 
-    res.render(page, {banner: banners[page]});
+    let page = req.params.page;
+    res.render(page, { banner: banners[page] });
 });
 
 //Set Server Port & Start Server
-app.set('port',process.env.PORT || 5000);
-app.listen(app.get('port'), () =>{
+app.set('port', process.env.PORT || 5000);
+app.listen(app.get('port'), () => {
     console.log(`Server is rungning at port ${app.get('port')}`);
 });
