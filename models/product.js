@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         price: DataTypes.DECIMAL,
         imagepath: DataTypes.TEXT,
         thumbnailpath: DataTypes.TEXT,
+        idCatogory: DataTypes.TEXT,
+        idBrand: DataTypes.TEXT,
         availability: DataTypes.BOOLEAN,
         sumary: DataTypes.TEXT,
         description: DataTypes.TEXT
