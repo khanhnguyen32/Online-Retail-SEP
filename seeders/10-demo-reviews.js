@@ -3,10 +3,10 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [
-            { message: "comment", rating: "rate star", idUser: "1", idProduct: "1", createAt: "time" },
-            { message: "comment", rating: "rate star", idUser: "2", idProduct: "2", createAt: "time" },
-            { message: "comment", rating: "rate star", idUser: "3", idProduct: "3", createAt: "time" },
-            { message: "comment", rating: "rate star", idUser: "4", idProduct: "4", createAt: "time" },
+            { message: "comment", rating: 5, userId: "1", productId: "1", createAt: "time" },
+            { message: "comment", rating: 4, userId: "2", productId: "2", createAt: "time" },
+            { message: "comment", rating: 3, userId: "3", productId: "3", createAt: "time" },
+            { message: "comment", rating: 5, userId: "4", productId: "4", createAt: "time" },
         ];
         data.map(item => {
             item.createdAt = Sequelize.literal('NOW()');
