@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     ProductSpecification.init({
-        productId: DataTypes.TEXT,
         description: DataTypes.TEXT
     }, {
         sequelize,

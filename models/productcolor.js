@@ -17,8 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     ProductColor.init({
-        colorId: DataTypes.TEXT,
-        productId: DataTypes.TEXT,
         imagepath: DataTypes.TEXT
     }, {
         sequelize,
