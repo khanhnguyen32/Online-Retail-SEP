@@ -15,10 +15,11 @@ let hbs = expressHbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-//Define routes
-app.get('/', (req, res) => {
-    res.render('index');
-});
+
+
+app.use('/', require('./routes/indexRouter'));
+app.use('/products', require('./routes/productRouter'));
+
 
 app.get('/sync', (req, res) => {
     let models = require('./models');
