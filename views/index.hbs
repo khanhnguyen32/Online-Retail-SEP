@@ -25,27 +25,15 @@
     <!--================ Hero Carousel start =================-->
     <section class="section-margin mt-0">
       <div class="owl-carousel owl-theme hero-carousel">
+        {{#each categories}}
         <div class="hero-carousel__slide">
-          <img src="img/home/item1.jpg" alt="" class="img-fluid">
+          <img src="{{imagepath}}" alt="" class="img-fluid">
           <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Deadline full-body dress</h3>
-            <p>17.999.000 VNĐ</p>
+            <h3>{{name}}</h3>
+            <p>{{summary}}</p>
           </a>
         </div>
-        <div class="hero-carousel__slide">
-          <img src="img/home/item2.jpg" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Boring midnight suit</h3>
-            <p>24.242.000 VNĐ</p>
-          </a>
-        </div>
-        <div class="hero-carousel__slide">
-          <img src="img/home/item3.jpg" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
-            <h3>Áo sơ mi bèo nhún cho ngày mỏi vai</h3>
-            <p>17.000.000 VNĐ -> NEW PRICE: 17.999.000 VNĐ</p>
-          </a>
-        </div>
+        {{/each}}
       </div>
     </section>
     <!--================ Hero Carousel end =================-->
