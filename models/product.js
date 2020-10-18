@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         imagepath: DataTypes.TEXT,
         thumbnailpath: DataTypes.TEXT,
         availability: DataTypes.BOOLEAN,
-        summary: DataTypes.TEXT,
+        sumary: DataTypes.TEXT,
         description: DataTypes.TEXT
     }, {
         sequelize,
