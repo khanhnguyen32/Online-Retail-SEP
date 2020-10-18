@@ -1,33 +1,35 @@
 {
-  "name": "online-retail-sep",
-  "version": "1.0.0",
-  "description": "Software Engineering Project",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khanhnguyen32/Online-Retail-SEP.git"
-  },
-  "keywords": [],
-  "author": "Khanh Nguyen, Oanh Nguyen, Thinh Tran",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/khanhnguyen32/Online-Retail-SEP/issues"
-  },
-  "homepage": "https://github.com/khanhnguyen32/Online-Retail-SEP#readme",
-  "dependencies": {
-    "-": "0.0.1",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "pg": "^8.3.3",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "name": "online-retail-sep",
+    "version": "1.0.0",
+    "description": "Software Engineering Project",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/khanhnguyen32/Online-Retail-SEP.git"
+    },
+    "keywords": [],
+    "author": "Khanh Nguyen, Oanh Nguyen, Thinh Tran",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/khanhnguyen32/Online-Retail-SEP/issues"
+    },
+    "homepage": "https://github.com/khanhnguyen32/Online-Retail-SEP#readme",
+    "dependencies": {
+        "-": "0.0.1",
+        "@handlebars/allow-prototype-access": "^1.0.3",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.1.0",
+        "pg": "^8.3.3",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^6.3.5",
+        "sequelize-cli": "^6.2.0"
+    },
+    "devDependencies": {
+        "handlebars": "^4.5.3",
+        "nodemon": "^2.0.4"
+    }
 }
