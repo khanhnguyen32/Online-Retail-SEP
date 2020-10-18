@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Software Engineering Project",
     "main": "index.js",
+    "engines": {
+        "node": "12.18.4"
+    },
 
     "scripts": {
         "start": "node index",
@@ -29,5 +32,4 @@
         "sequelize-cli": "^6.2.0",
         "nodemon": "^2.0.4"
     }
-
 }
