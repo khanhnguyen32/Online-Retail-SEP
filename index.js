@@ -1,6 +1,3 @@
-const Handlebars = require('handlebars');
-const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
-
 let express = require('express');
 let app = express();
 
@@ -13,8 +10,7 @@ let hbs = expressHbs.create({
     extname: 'hbs',
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views/partials/',
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
+    partialsDir: __dirname + '/views/partials/'
 });
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
