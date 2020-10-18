@@ -4,8 +4,7 @@
         "password": "postgres",
         "database": "lazydb",
         "host": "localhost",
-        "dialect": "postgres",
-        "db": "sequelize db:migrate && sequelize db:seed:all"
+        "dialect": "postgres"
     },
     "test": {
         "username": "postgres",
