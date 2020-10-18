@@ -8,8 +8,8 @@ controller.getAll = () => {
             .findAll({
                 attributes: ['id', 'name', 'imagepath', 'summary']
             })
-            .then(data => resolve(data))
-            .catch(error => reject(new Error(error)));
+            .then(data => resolve(data));
+        // .catch(error => reject(new Error(error)));
     });
 };
 module.exports = controller;
