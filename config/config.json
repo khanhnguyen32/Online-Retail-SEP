@@ -17,7 +17,7 @@
         "username": "heroku-postgres-username",
         "password": "heroku-postgres-password",
         "database": "heroku-postgres-database",
-        "host": "heroku-postgres-host",
+        "host": "localhost",
         "dialect": "postgres",
         "dialectOptions": {
             "ssl": {
