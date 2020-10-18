@@ -1,16 +1,10 @@
 {
     "development": {
-        "username": "mbquwoxmfnsdwk",
-        "password": "59cb04d4caf922c5b26139399339511aa35f7a8f0380a5aecc26f13e37621c9a",
-        "database": "d8erg2to0v0g89",
-        "host": "ec2-54-161-58-21.compute-1.amazonaws.com",
-        "dialect": "postgres",
-        "dialectOptions": {
-            "ssl": {
-                "require": true,
-                "rejectUnauthorized": false
-            }
-        }
+        "username": "postgres",
+        "password": "postgres",
+        "database": "lazydb",
+        "host": "localhost",
+        "dialect": "postgres"
     },
     "test": {
         "username": "postgres",
@@ -20,17 +14,13 @@
         "dialect": "postgres"
     },
     "production": {
-        "username": "mbquwoxmfnsdwk",
-        "password": "59cb04d4caf922c5b26139399339511aa35f7a8f0380a5aecc26f13e37621c9a",
-        "database": "d8erg2to0v0g89",
-        "host": "ec2-54-161-58-21.compute-1.amazonaws.com",
+        "username": "heroku-postgres-username",
+        "password": "heroku-postgres-password",
+        "database": "heroku-postgres-database",
+        "host": "heroku-postgres-host",
         "dialect": "postgres",
         "dialectOptions": {
-            "ssl": {
-                "require": true,
-                "rejectUnauthorized": false
-            }
-
+            "sll": true
         }
     }
 }
