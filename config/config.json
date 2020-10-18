@@ -4,23 +4,26 @@
         "password": "postgres",
         "database": "lazydb",
         "host": "localhost",
-        "dialect": "postgres",
-        "operatorAliases": false
+        "dialect": "postgres"
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "dialect": "mysql",
-        "operatorAliases": false
+        "username": "postgres",
+        "password": "postgres",
+        "database": "lazydb",
+        "host": "localhost",
+        "dialect": "postgres"
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "dialect": "mysql",
-        "operatorAliases": false
+        "username": "heroku-postgres-username",
+        "password": "heroku-postgres-password",
+        "database": "heroku-postgres-database",
+        "host": "heroku-postgres-host",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
     }
 }
