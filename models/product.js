@@ -27,7 +27,9 @@ module.exports = (sequelize, DataTypes) => {
         thumbnailpath: DataTypes.TEXT,
         availability: DataTypes.BOOLEAN,
         sumary: DataTypes.TEXT,
-        description: DataTypes.TEXT
+        description: DataTypes.TEXT,
+        overallReview: DataTypes.DOUBLE,
+        reviewCount: DataTypes.INTEGER
     }, {
         sequelize,
         modelName: 'Product',
