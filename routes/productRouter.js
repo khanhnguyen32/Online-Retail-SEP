@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
             res.locals.brands = data;
             let colorController = require('../controllers/colorController');
             return colorController.getAll();
-           
+
         })
         .then(data => {
             res.locals.colors = data;
@@ -29,8 +29,16 @@ router.get('/', (req, res, next) => {
 
 });
 
-router.get('/:id', (req, res) => {
-    res.render('singleproduct');
+router.get('/:id', (req, res, next) => {
+    let productController = require('../controllers/productController');
+    productController
+        .getById(req.params.id)
+        .then(product => {
+            res.locals.product = product;
+            res.render('singleproduct');
+        })
+        .catch(error => next(error));
+
 });
 
 module.exports = router;
