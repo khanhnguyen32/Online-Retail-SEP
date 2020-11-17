@@ -4,8 +4,8 @@ module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [{
                 name: "white plaid shirt",
-                price: "15000000",
-                imagepath: 'img/home/item1.jpg',
+                price: 15000000,
+                imagepath: "img/home/item2.jpg",
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 1,
                 brandId: 1,
@@ -17,7 +17,7 @@ module.exports = {
             },
             {
                 name: "Doremon blue collar t-shirt",
-                price: "20000000",
+                price: 20000000,
                 imagepath: 'img/home/item2.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 2,
@@ -30,7 +30,7 @@ module.exports = {
             },
             {
                 name: "Gray sport sleeve shirt",
-                price: "10000000",
+                price: 10000000,
                 imagepath: 'img/home/item3.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 3,
@@ -43,7 +43,7 @@ module.exports = {
             },
             {
                 name: "Brown vintage wind jacket",
-                price: "17000000",
+                price: 17000000,
                 imagepath: 'img/home/item1.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 4,
@@ -56,7 +56,7 @@ module.exports = {
             },
             {
                 name: "Pink turtleneck sweater",
-                price: "22000000",
+                price: 22000000,
                 imagepath: 'img/home/item2.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 5,
@@ -69,7 +69,7 @@ module.exports = {
             },
             {
                 name: "black felt hoodie",
-                price: "18000000",
+                price: 18000000,
                 imagepath: 'img/home/item3.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 6,
@@ -82,7 +82,7 @@ module.exports = {
             },
             {
                 name: "Floral Pattern Yellow T-shirt",
-                price: "20000000",
+                price: 20000000,
                 imagepath: 'img/home/item1.jpg',
                 thumbnailpath: 'img/home/item2.jpg',
                 categoryId: 7,

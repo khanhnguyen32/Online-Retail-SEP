@@ -1,25 +1,11 @@
 
 <!-- ================ start banner area ================= -->	
-  <section class="blog-banner-area" id="blog">
-    <div class="container h-100">
-      <div class="blog-banner">
-        <div class="text-center">
-          <h1>{{banner}}</h1>
-          <nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Single Product</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{banner}}</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+{{> banner}}
   <!-- ================ end banner area ================= -->
 
-
+{{#with product}}
   <!--================Single Product Area =================-->
-	{{#with product}}
+	
 	<div class="product_image_area">
 		<div class="container">
 			<div class="row s_product_inner">
@@ -41,10 +27,10 @@
 						<h3>{{name}}</h3>
 						<h2>{{price}}</h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>Category</span> : {{Category.Name}}</a></li>
-							<li><a href="#"><span>Availibility</span> :{{#if availibility}} Còn hàng mua lẹ dùm{{else}} Hết hàng rồi xin lỗi{{/if}}</a></li>
+							<li><a class="active" href="#"><span>Category</span> : {{Category.name}}</a></li>
+							<li><a href="#"><span>Availibility</span> :{{#if availability}} Còn hàng mua lẹ dùm{{else}} Hết hàng rồi xin lỗi{{/if}}</a></li>
 						</ul>
-						<p>{{summary}}</p>
+						<p>{{sumary}}</p>
 						<div class="product_count">
               <label for="qty">Quantity:</label>
               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
@@ -63,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-	{{/with}}
+	
 	<!--================End Single Product Area =================-->
 
 	<!--================Product Description Area =================-->
@@ -72,10 +58,6 @@
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 				<li class="nav-item">
 					<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-					 aria-selected="false">Specification</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
@@ -90,78 +72,7 @@
 				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<p>{{{description}}}</p>
 				</div>
-				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-					<div class="table-responsive">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td>
-										<h5>Width</h5>
-									</td>
-									<td>
-										<h5>128mm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Height</h5>
-									</td>
-									<td>
-										<h5>508mm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Depth</h5>
-									</td>
-									<td>
-										<h5>85mm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Weight</h5>
-									</td>
-									<td>
-										<h5>52gm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Quality checking</h5>
-									</td>
-									<td>
-										<h5>yes</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Freshness Duration</h5>
-									</td>
-									<td>
-										<h5>03days</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>When packeting</h5>
-									</td>
-									<td>
-										<h5>Without touch of hand</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Each Box contains</h5>
-									</td>
-									<td>
-										<h5>60pcs</h5>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
+				
 				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 					<div class="row">
 						<div class="col-lg-6">
@@ -367,8 +278,9 @@
 			</div>
 		</div>
 	</section>
+	
 	<!--================End Product Description Area =================-->
-
+{{/with}}
 	<!--================ Start related Product area =================-->  
 	<section class="related-product-area section-margin--small mt-0">
 		<div class="container">

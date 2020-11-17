@@ -44,7 +44,7 @@ app.get('/:page', (req, res) => {
         login: 'Login / Register',
         register: 'Register',
         singleblog: 'Blog Details',
-        singleproduct: 'Shop Single',
+        products: 'Shop Single',
         trackingorder: 'Order Tracking'
     };
     let page = req.params.page;
