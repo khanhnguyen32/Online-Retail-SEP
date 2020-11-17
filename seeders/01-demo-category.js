@@ -3,7 +3,6 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [
-            { name: "Must have", imagepath: 'img/home/item1.jpg' },
             { name: "Shirt", imagepath: 'img/home/item1.jpg' },
             { name: "T-Shirt & Top", imagepath: 'img/home/item1.jpg' },
             { name: "Jacket", imagepath: 'img/home/item1.jpg' },

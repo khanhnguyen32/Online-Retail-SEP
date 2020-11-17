@@ -3,12 +3,12 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [
-            { name: "H&M", imagepath: 'img/home/item1.jpg' },
-            { name: "Unique", imagepath: 'img/home/item1.jpg' },
-            { name: "Adidas", imagepath: 'img/home/item1.jpg' },
+            { name: "Hát&eM", imagepath: 'img/home/item1.jpg' },
+            { name: "Uniqlô", imagepath: 'img/home/item1.jpg' },
+            { name: "Adidasphật", imagepath: 'img/home/item1.jpg' },
             { name: "Zara", imagepath: 'img/home/item1.jpg' },
-            { name: "Louis Vuitton", imagepath: 'img/home/item1.jpg' },
-            { name: "Gucci", imagepath: 'img/home/item1.jpg' },
+            { name: "Luôn Vuituoi", imagepath: 'img/home/item1.jpg' },
+            { name: "Củcchi", imagepath: 'img/home/item1.jpg' },
             { name: "Chanel", imagepath: 'img/home/item1.jpg' },
         ];
         data.map(item => {
