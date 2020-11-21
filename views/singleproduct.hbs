@@ -91,51 +91,36 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="comment_list">
+								{{#each Comments}}
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
-											<img src="img/product/review-1.png" alt="">
+											<img src="{{User.avatarPath}}" alt="">
 										</div>
 										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<h5>12th Feb, 2018 at 05:56 pm</h5>
+											<h4>{{User.username}}</h4>
+											<h5>{{createdAt}}</h5>
 											<a class="reply_btn" href="#">Reply</a>
 										</div>
 									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
+									<p>{{message}}</p>
 								</div>
+								{{#each SubComments}}
 								<div class="review_item reply">
 									<div class="media">
 										<div class="d-flex">
-											<img src="img/product/review-2.png" alt="">
+											<img src="{{User.avatarPath}}" alt="">
 										</div>
 										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<h5>12th Feb, 2018 at 05:56 pm</h5>
+											<h4>{{User.username}}</h4>
+											<h5>{{createdAt}}</h5>
 											<a class="reply_btn" href="#">Reply</a>
 										</div>
 									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
+									<p>{{message}}</p>
 								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-3.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<h5>12th Feb, 2018 at 05:56 pm</h5>
-											<a class="reply_btn" href="#">Reply</a>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
+								{{/each}}
+								{{/each}}
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -177,83 +162,33 @@
 								<div class="col-6">
 									<div class="box_total">
 										<h5>Overall</h5>
-										<h4>4.0</h4>
-										<h6>(03 Reviews)</h6>
+										<h4>{{overallReview}}</h4>
+										<h6>{{reviewCount}} Reviews</h6>
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="rating_list">
-										<h3>Based on 3 Reviews</h3>
-										<ul class="list">
-											<li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-											<li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
-										</ul>
+										<h3>Based on {{reviewCount}} Reviews</h3>
+										{{{createStarList stars}}}
 									</div>
 								</div>
 							</div>
 							<div class="review_list">
+								{{#each Reviews}}
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
-											<img src="img/product/review-1.png" alt="">
+											<img src="{{User.avatarPath}}" alt="">
 										</div>
 										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+											<h4>{{User.username}}</h4>
+											{{{createStars rating}}}
 										</div>
 									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
+									<p>{{message}}</p>
 								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-2.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="img/product/review-3.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo</p>
-								</div>
+								{{/each}}
+								
 							</div>
 						</div>
 						<div class="col-lg-6">
