@@ -35,7 +35,7 @@ controller.getById = (id) => {
         Product
             .findOne({
                 where: { id: id },
-                include: [{ model: models.Category }]
+                include: [{ model: models.Category }],
             })
             .then(result => resolve(result))
             .catch(error => reject(new Error(error)));
