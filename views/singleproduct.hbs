@@ -20,7 +20,7 @@
 {{#with product}}
   <!--================Single Product Area =================-->
 	
-	<div class="product_image_area">
+	<section class="product_image_area">
 		<div class="container">
 			<div class="row s_product_inner">
 				<div class="col-lg-6">
@@ -39,7 +39,7 @@
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
 						<h3>{{name}}</h3>
-						<h2>{{price}}</h2>
+						<h2>{{numberWithCommas(price)}} VNĐ</h2>
 						<ul class="list">
 							<li><a class="active" href="#"><span>Category</span> : {{Category.name}}</a></li>
 							<li><a href="#"><span>Availability</span> :{{#if availability}} Còn hàng mua lẹ dùm{{else}} Hết hàng rồi xin lỗi{{/if}}</a></li>
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	
 	<!--================End Single Product Area =================-->
 
@@ -84,7 +84,7 @@
 			</ul>
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-					<p>{{{description}}}</p>
+					<pre>{{{description}}}</pre>
 				</div>
 				
 				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -95,7 +95,7 @@
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
-											<img src="{{User.avatarPath}}" alt="">
+											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
 											<h4>{{User.username}}</h4>
@@ -109,7 +109,7 @@
 								<div class="review_item reply">
 									<div class="media">
 										<div class="d-flex">
-											<img src="{{User.avatarPath}}" alt="">
+											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
 											<h4>{{User.username}}</h4>
@@ -178,7 +178,7 @@
 								<div class="review_item">
 									<div class="media">
 										<div class="d-flex">
-											<img src="{{User.avatarPath}}" alt="">
+											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
 											<h4>{{User.username}}</h4>
