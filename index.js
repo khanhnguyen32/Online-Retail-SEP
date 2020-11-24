@@ -56,9 +56,6 @@ app.get('/:page', (req, res) => {
     res.render(page, { banner: banners[page] });
 });
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 
 //Set Server Port & Start Server
 app.set('port', process.env.PORT || 5000);
