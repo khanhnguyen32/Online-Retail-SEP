@@ -3,23 +3,35 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [{
-                name: "white plaid shirt",
+                name: "white happy sunday shirt",
                 price: 15000000,
-                imagepath: "img/home/item2.jpg",
-                thumbnailpath: 'img/home/item2.jpg',
+                imagepath: "../img/hm/hm-shirt-1.jpg",
+                thumbnailpath: '../img/hm/hm-shirt-1.jpg',
                 categoryId: 1,
                 brandId: 1,
                 availability: true,
-                sumary: "hello",
-                description: "goodbye",
+                sumary: "Inspired by the French concept of Bon Ton, a sophisticated design is infused in this shirt, crafted from ivory silk crêpe de Chine and decorated by a ruffled jabot, an ornamental detail first used in the 17th and 18th centuries. Self-covered buttons and puff sleeves enhance the item's vintage feel. Pieces with versatile ways to wear and style embrace each person who is part of the House’s individual spirit.",
+                description: `
+                -Ivory silk crêpe de Chine
+                -Double G metal buttons
+                -This product contains organic silk where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -High neck
+                -Ruffled jabot
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40 (IT)
+                -100% silk
+                -Made in Italy
+                -The product shown in this image is a size 40 (IT)`,
                 overallReview: 5,
                 reviewCount: 2
             },
             {
                 name: "Doremon blue collar t-shirt",
                 price: 20000000,
-                imagepath: 'img/home/item2.jpg',
-                thumbnailpath: 'img/home/item2.jpg',
+                imagepath: '../img/home/item2.jpg',
+                thumbnailpath: './img/home/item2.jpg',
                 categoryId: 2,
                 brandId: 2,
                 availability: true,
