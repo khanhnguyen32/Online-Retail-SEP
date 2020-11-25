@@ -2,7 +2,6 @@ let express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res, next) => {
-    //req.query
     let categoryController = require('../controllers/categoryController');
     categoryController
         .getAll()

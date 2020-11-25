@@ -22,13 +22,22 @@ controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
         let options = {
             include: [{ model: models.Category }],
-            attributes: ['id', 'name', 'imagepath', 'price'],
+            attributes: ['id', 'name', 'imagepath','price'],
             where: {}
         };
         if (query.category){
             options.where.categoryId = query.category;
-         }
-
+        }
+        if(query.brand){
+            options.where.brandId = query.brand;
+        }
+        if(query.color){
+            options.include.push({
+            model: models.ProductColor,
+            attributes: [],
+            where: { colorId: query.color }
+        });
+    }
         Product
             .findAll(options)
             .then(data => resolve(data))
