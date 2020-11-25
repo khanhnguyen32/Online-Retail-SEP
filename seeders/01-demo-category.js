@@ -3,14 +3,13 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [
-            { name: "Shirt", imagepath: 'img/home/item1.jpg' },
-            { name: "T-Shirt & Top", imagepath: 'img/home/item2.jpg' },
-            { name: "Jacket", imagepath: 'img/home/item3.jpg' },
-            { name: "Blazer", imagepath: 'img/home/item1.jpg' },
-            { name: "Dress & Skirt", imagepath: 'img/home/item1.jpg' },
-            { name: "Trouser & Jean", imagepath: 'img/home/item1.jpg' },
-            { name: "Shoes", imagepath: 'img/home/item1.jpg' },
-            { name: "Bag", imagepath: 'img/home/item1.jpg' }
+            { name: "Shirt", imagepath: '../img/categories/item3.jpg' },
+            { name: "T-Shirt & Top", imagepath: '../img/categories/item1.jpg' },
+            { name: "Jacket", imagepath: '../img/categories/item2.jpg' },
+            { name: "Dress & Skirt", imagepath: '../img/categories/dress.jpg' },
+            { name: "Trouser & Jean", imagepath: '../img/categories/trouser.jpg' },
+            { name: "Shoes", imagepath: '../img/categories/shoes.jpg' },
+            { name: "Bag & Accessories", imagepath: '../img/categories/bag.jpg' }
         ];
         data.map(item => {
             item.createdAt = Sequelize.literal('NOW()');
