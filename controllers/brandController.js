@@ -16,13 +16,13 @@ controller.getAll = (query) => {
             options.include[0].where.categoryId =
             query.category;
         }
-        // if (query.color){
-        //     options.include[0].include = [{
-        //         model: model.ProductColor,
-        //         attributes: [],
-        //         where: {colorId: query.color}
-        //     }];
-        //}
+        if (query.color){
+            options.include[0].include = [{
+                model: models.ProductColor,
+                attributes: [],
+                where: {colorId: query.color}
+            }];
+        }
 
         Brand
             .findAll(options)

@@ -32,11 +32,11 @@ controller.getAll = (query) => {
             options.where.brandId = query.brand;
         }
         if(query.color){
-            options.include.push({
+            options.include.push[{
             model: models.ProductColor,
             attributes: [],
-            where: { colorId: query.color }
-        });
+            where: {colorId: query.color}
+        }];
     }
         Product
             .findAll(options)
