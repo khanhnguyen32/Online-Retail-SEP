@@ -28,7 +28,7 @@
               <form action="#">
                 <ul>
                   {{#each brands}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">{{name}}<span> ({{Products.length}})</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="brand{{id}}" name="brand" onclick="selectParam('brand',{{id}})">{{name}}<span> ({{Products.length}})</span></label></li>
                   {{/each}}
                 </ul>
               </form>
@@ -38,7 +38,7 @@
               <form action="#">
                 <ul>
                   {{#each colors}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">{{name}}<span> ({{ProductColors.length}})</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color" onclick=""selectParam('color',{{id}})">{{name}}<span> ({{Products.length}})</span></label></li>
                   {{/each}}
                 </ul>
               </form>
