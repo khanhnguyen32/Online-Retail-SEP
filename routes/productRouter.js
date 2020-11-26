@@ -2,6 +2,15 @@ let express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res, next) => {
+    if((req.query.category == null) || isNaN(req.query.category)){
+        req.query.category = 0;
+    }
+    if((req.query.brand == null) || isNaN(req.query.brand)){
+        req.query.brand = 0;
+    }
+
+
+
     let categoryController = require('../controllers/categoryController');
     categoryController
         .getAll()

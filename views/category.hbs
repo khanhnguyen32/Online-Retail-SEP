@@ -14,7 +14,7 @@
                 <form action="#">
                   <ul>
                     {{#each categories}}
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men">{{name}}<span> ({{Products.length}})</span></label></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="brand"><label for="category{{id}}" onclick="selectParam('category',{{id}})">{{name}}<span> ({{Products.length}})</span></label></li>
                     {{/each}}
                   </ul>
                 </form>
@@ -257,3 +257,9 @@
     </div>
   </section>
 	<!-- ================ Subscribe section end ================= -->		  
+<script>
+    function selectParam(key, value){
+      let url = `/products?${key}=${value}`;
+      location.href = url;
+    }
+</script>
