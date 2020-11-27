@@ -8,7 +8,9 @@ router.get('/', (req, res, next) => {
     if((req.query.brand == null) || isNaN(req.query.brand)){
         req.query.brand = 0;
     }
-
+    // if((req.query.color == null) || isNaN(req.query.color)){
+    //     req.query.color = 0;
+    // }
 
 
     let categoryController = require('../controllers/categoryController');

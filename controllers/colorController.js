@@ -13,7 +13,6 @@ controller.getAll = (query) => {
                     model: models.Product,
                     attributes: [],
                     where: {}
-
                  }]
             }]
         };
@@ -22,7 +21,6 @@ controller.getAll = (query) => {
             options.include[0].include[0].where.categoryId = 
             query.category;
        }
-
        if(query.brand){
            options.include[0].include[0].where.brandId = 
            query.brand;
