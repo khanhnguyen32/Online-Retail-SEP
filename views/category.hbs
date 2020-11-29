@@ -258,8 +258,22 @@
   </section>
 	<!-- ================ Subscribe section end ================= -->		  
 <script>
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+      category: 0,
+      brand: 0,
+      color: 0
+    };
+
+    for(let key in params){
+      if (!urlParams.has(key)){
+        urlParams.append(key, params[key]);
+      }
+    }
+    
     function selectParam(key, value){
-      let url = `/products?${key}=${value}`;
+      urlParams.set(key, value);
+      let url = `/products?${urlParams.toString()}`;
       location.href = url;
     }
 </script>
