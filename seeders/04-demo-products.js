@@ -5,8 +5,8 @@ module.exports = {
         let data = [{
                 name: "white happy sunday shirt",
                 price: 15000000,
-                imagepath: "../img/hm/hm-shirt-1.jpg",
-                thumbnailpath: '../img/hm/hm-shirt-1.jpg',
+                imagepath: "../img/products/hm-shirt-1.jpg",
+                thumbnailpath: '../img/products/hm-shirt-1.jpg',
                 categoryId: 1,
                 brandId: 1,
                 availability: true,
@@ -24,33 +24,51 @@ module.exports = {
                 -100% silk
                 -Made in Italy
                 -The product shown in this image is a size 40 (IT)`,
-                overallReview: 5,
+                overallReview: 4.5,
                 reviewCount: 2
             },
             {
-                name: "Doremon blue collar t-shirt",
+                name: "Super Luxurious & Elegant shirt",
                 price: 20000000,
-                imagepath: '../img/categories/item2.jpg',
-                thumbnailpath: '../img/categories/item2.jpg',
-                categoryId: 2,
+                imagepath: '../img/products/uni-shirt-1.jpg',
+                thumbnailpath: '../img/products/uni-shirt-1.jpg',
+                categoryId: 1,
                 brandId: 2,
-                availability: true,
-                sumary: "hello",
-                description: "goodbye",
+                availability: false,
+                sumary: "A shirt for lazy day but you still want to be elegant and luxurious.",
+                description: `
+                -Material: Cotton
+                -Cổ trụ
+                -This product contains organic silk where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -High neck
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40
+                -Made in Japan`,
                 overallReview: 4,
                 reviewCount: 2
             },
             {
-                name: "Gray sport sleeve shirt",
+                name: "fÈN Dress for Sleepy people",
                 price: 10000000,
-                imagepath: '../img/categories/item3.jpg',
-                thumbnailpath: '../img/categories/item2.jpg',
-                categoryId: 3,
+                imagepath: '../img/products/adidas-dress-1.jpg',
+                thumbnailpath: '../img/products/adidas-dress-1.jpg',
+                categoryId: 4,
                 brandId: 3,
                 availability: true,
-                sumary: "hello",
-                description: "goodbye",
-                overallReview: 4.2,
+                sumary: "When you are luxurious and fancy but you want to be fèn one day, wear this dress to be fèn 💄",
+                description: `
+                -Material: Cotton
+                -1 piece dress
+                -This product contains organic where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -Short length
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40
+                -Made in US`,
+                overallReview: 4.5,
                 reviewCount: 2
             },
             {
