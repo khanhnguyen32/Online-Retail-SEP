@@ -10,18 +10,17 @@ controller.getAll = (query) => {
                 model: models.Product,
                 attributes: ['id'],
                 where: {}
-        }]
-    };
-    
-        if(query.category > 0){
+            }]
+        };
+        if (query.category) {
             options.include[0].where.categoryId =
-            query.category;
+                query.category;
         }
-        if (query.color > 0){
+        if (query.color) {
             options.include[0].include = [{
                 model: models.ProductColor,
                 attributes: [],
-                where: {colorId: query.color}
+                where: { colorId: query.color }
             }];
         }
 

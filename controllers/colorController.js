@@ -17,11 +17,11 @@ controller.getAll = (query) => {
             }]
         };
 
-        if (query.category > 0) {
+        if (query.category) {
             options.include[0].include[0].where.categoryId =
                 query.category;
         }
-        if (query.brand > 0) {
+        if (query.brand) {
             options.include[0].include[0].where.brandId =
                 query.brand;
         }
