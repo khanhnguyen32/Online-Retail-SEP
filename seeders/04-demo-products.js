@@ -72,16 +72,27 @@ module.exports = {
                 reviewCount: 2
             },
             {
-                name: "Brown vintage wind jacket",
+                name: "Double armour jacket",
                 price: 17000000,
-                imagepath: '../img/categories/item1.jpg',
-                thumbnailpath: '../img/categories/item2.jpg',
-                categoryId: 4,
-                brandId: 4,
-                availability: true,
-                sumary: "hello",
-                description: "goodbye",
-                overallReview: 4.3,
+                imagepath: '../img/products/hm-jacket-1.jpg',
+                thumbnailpath: '../img/products/hm-jacket-1.jpg',
+                categoryId: 3,
+                brandId: 1,
+                availability: false,
+                sumary: "Oversized, double-breasted jacket in a soft wool blend with notch lapels and diagonal front pockets. Lined. The wool content of the jacket is recycled.",
+                description: `
+                Sleeve Length :Long sleeve
+                Fit: Oversized
+                Style: Blazer
+                Composition
+                    Lining: Polyester 100%
+                    Shell: Polyester 60%, Wool 30%, Other fibres 10%
+                Care instructions
+                    Dry clean
+                Description
+                    Grey marl
+                    Solid colour`,
+                overallReview: 4,
                 reviewCount: 2
             },
             {
