@@ -1,4 +1,4 @@
-
+<script src="/vendors/nouislider/nouislider.min.js"></script>
 	{{> banner}}
 
 
@@ -14,7 +14,8 @@
                 <form action="#">
                   <ul>
                     {{#each categories}}
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="brand" onclick="selectParam('category',{{id}})" ><label for="category{{id}}" onclick="selectParam('category',{{id}})">{{name}}<span> ({{Products.length}})</span></label></li>
+
+ <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"><label for="category{{id}}" onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
                     {{/each}}
                   </ul>
                 </form>
@@ -258,8 +259,34 @@
   </section>
 	<!-- ================ Subscribe section end ================= -->		  
 <script>
-    function selectParam(key, value){
-      let url = `/products?${key}=${value}`;
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+      category: 0,
+      brand: 0,
+      color: 0
+    };
+
+    for(let key in params){
+      if (!urlParams.has(key)){
+        urlParams.append(key, params[key]);
+      }
+    }
+
+  for (let key in params){
+    let control = $(`#${key}${urlParams.get(key)}`);
+    if (control) {
+      $(control).prop('checked', true);
+    }
+}
+    function selectParam(key, value, reset = false){
+      if (reset) {
+        for(let key in params){
+        urlParams.set(key, params[key]);
+      }
+    }
+
+      urlParams.set(key, value);
+      let url = `/products?${urlParams.toString()}`;
       location.href = url;
     }
 </script>

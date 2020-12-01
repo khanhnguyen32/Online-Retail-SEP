@@ -25,13 +25,13 @@ controller.getAll = (query) => {
             attributes: ['id', 'name', 'imagepath', 'price'],
             where: {}
         };
-        if (query.category) {
+        if (query.category > 0) {
             options.where.categoryId = query.category;
         }
-        if (query.brand) {
+        if (query.brand > 0) {
             options.where.brandId = query.brand;
         }
-        if (query.color) {
+        if (query.color > 0) {
             options.include.push({
                 model: models.ProductColor,
                 attributes: [],
