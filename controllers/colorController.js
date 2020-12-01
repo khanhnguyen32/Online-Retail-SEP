@@ -2,6 +2,8 @@ let controller = {};
 let models = require('../models');
 const color = require('../models/color');
 let Color = models.Color;
+let Sequelize = require('sequelize');
+let Op = Sequelize.Op;
 
 controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
@@ -12,7 +14,12 @@ controller.getAll = (query) => {
                 include: [{
                     model: models.Product,
                     attributes: [],
-                    where: {}
+                    where: {
+                        price: {
+                            [Op.gte]: query.min,
+                            [Op.lte]: query.max
+                        }
+                    }
                 }]
             }]
         };
