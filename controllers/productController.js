@@ -34,6 +34,11 @@ controller.getAll = (query) => {
         if (query.category > 0) {
             options.where.categoryId = query.category;
         }
+        if (query.search != '') {
+            options.where.name = {
+                [Op.iLike]: `%${query.search}%`
+            }
+        }
         if (query.brand > 0) {
             options.where.brandId = query.brand;
         }

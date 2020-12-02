@@ -1,3 +1,4 @@
+const { query } = require('express');
 let express = require('express');
 let router = express.Router();
 
@@ -32,7 +33,7 @@ router.get('/', (req, res, next) => {
 
     let categoryController = require('../controllers/categoryController');
     categoryController
-        .getAll()
+        .getAll(req.query)
         .then(data => {
             res.locals.categories = data;
             let brandController = require('../controllers/brandController');
