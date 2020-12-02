@@ -47,6 +47,33 @@ controller.getAll = (query) => {
         if( query.min >=0 ){
 
         }
+        if (query.limit > 0) {
+            options.limit = query.limit;
+            options.offset = query.limit * (query.page -1);
+        }
+        if (query.sort) {
+            switch (query.sort) {
+                case 'name':
+                    options.order = [
+                        ['name', 'ASC']
+                    ];
+                    break;
+                case 'price':
+                    options.order = [
+                        ['price', 'ASC']
+                    ];
+                    break;
+                case 'overallReview':
+                    options.order = [
+                        ['overallReview', 'DESC']
+                    ];
+                    break;
+                default:
+                    options.order = [
+                        ['name', 'ASC']
+                    ];
+            }
+        }
         Product
             .findAll(options)
             .then(data => resolve(data))

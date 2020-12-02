@@ -64,17 +64,17 @@
           <!-- Start Filter Bar -->
           <div class="filter-bar d-flex flex-wrap align-items-center">
             <div class="sorting">
-              <select>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
+              <selecto onchange="selectParam('sort', this.value)">
+                <option value="name">Default sorting by name</option>
+                <option value="price">Sorting by price low to high</option>
+                <option value="overallReview">Sorting by reviews from high to low</option>
               </select>
             </div>
             <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
+              <select onchange="selectParam('limit', this.value)">
+                <option value="9">Show 9</option>
+                <option value="18">Show 18</option>
+                <option value="36">Show 36</option>
               </select>
             </div>
             <div>
