@@ -1,20 +1,5 @@
 <script src="/vendors/nouislider/nouislider.min.js"></script>
-
-	<section class="blog-banner-area" id="blog">
-    <div class="container h-100">
-      <div class="blog-banner">
-        <div class="text-center">
-          <h1>Products</h1>
-          <nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Products</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+	{{> banner}}
 
 
 	<!-- ================ category section start ================= -->		  
@@ -29,7 +14,8 @@
                 <form action="#">
                   <ul>
                     {{#each categories}}
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"><label for="category{{id}}" onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
+
+ <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"><label for="category{{id}}" onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
                     {{/each}}
                   </ul>
                 </form>
@@ -53,7 +39,7 @@
               <form action="#">
                 <ul>
                   {{#each colors}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color" onclick="selectParam('color',{{id}})"><label for="color{{id}}">{{name}}<span> ({{ProductColors.length}})</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color" onclick="selectParam('color',{{id}})">{{name}}<span> ({{ProductColors.length}})</span></label></li>
                   {{/each}}
                 </ul>
               </form>
