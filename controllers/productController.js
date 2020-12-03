@@ -49,8 +49,8 @@ controller.getAll = (query) => {
                 where: { colorId: query.color }
             });
         }
+        if( query.min >=0 ){
 
-<<<<<<< Updated upstream
         }
         if (query.limit > 0) {
             options.limit = query.limit;
@@ -79,8 +79,6 @@ controller.getAll = (query) => {
                     ];
             }
         }
-=======
->>>>>>> Stashed changes
         Product
             .findAll(options)
             .then(data => resolve(data))
