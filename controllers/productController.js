@@ -34,11 +34,6 @@ controller.getAll = (query) => {
         if (query.category > 0) {
             options.where.categoryId = query.category;
         }
-        if (query.search != '') {
-            options.where.name = {
-                [Op.iLike]: `%${query.search}%`
-            }
-        }
         if (query.brand > 0) {
             options.where.brandId = query.brand;
         }
@@ -49,12 +44,12 @@ controller.getAll = (query) => {
                 where: { colorId: query.color }
             });
         }
-        if( query.min >=0 ){
+        // if (query.min >= 0) {
 
-        }
+        // }
         if (query.limit > 0) {
             options.limit = query.limit;
-            options.offset = query.limit * (query.page -1);
+            options.offset = query.limit * (query.page - 1);
         }
         if (query.sort) {
             switch (query.sort) {

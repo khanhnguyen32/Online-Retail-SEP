@@ -1,4 +1,3 @@
-const { query } = require('express');
 let express = require('express');
 let router = express.Router();
 
@@ -12,28 +11,16 @@ router.get('/', (req, res, next) => {
     if ((req.query.color == null) || isNaN(req.query.color)) {
         req.query.color = 0;
     }
-    if ((req.query.min == null) || isNaN(req.query.color)) {
+    if ((req.query.min == null) || isNaN(req.query.min)) {
         req.query.min = 0;
     }
-    if ((req.query.max == null) || isNaN(req.query.color)) {
+    if ((req.query.max == null) || isNaN(req.query.max)) {
         req.query.max = 100;
     }
-    if ((req.query.sort == null)) {
-        req.query.sort = 'name';
-    }
-    if ((req.query.limit == null) || isNaN(req.query.limit)) {
-        req.query.limit = 9;
-    }
-    if ((req.query.page == null) || isNaN(req.query.page)) {
-        req.query.page = 1;
-    }
-    if ((req.query.search == null) || (req.query.search.trim() == '')) {
-        req.query.search = '';
-    }
-
+ 
     let categoryController = require('../controllers/categoryController');
     categoryController
-        .getAll(req.query)
+        .getAll()
         .then(data => {
             res.locals.categories = data;
             let brandController = require('../controllers/brandController');
