@@ -44,8 +44,38 @@ controller.getAll = (query) => {
                 where: { colorId: query.color }
             });
         }
-        if( query.min >=0 ){
+        // if (query.min >= 0) {
 
+<<<<<<< Updated upstream
+=======
+        // }
+        if (query.limit > 0) {
+            options.limit = query.limit;
+            options.offset = query.limit * (query.page - 1);
+        }
+        if (query.sort) {
+            switch (query.sort) {
+                case 'name':
+                    options.order = [
+                        ['name', 'ASC']
+                    ];
+                    break;
+                case 'price':
+                    options.order = [
+                        ['price', 'ASC']
+                    ];
+                    break;
+                case 'overallReview':
+                    options.order = [
+                        ['overallReview', 'DESC']
+                    ];
+                    break;
+                default:
+                    options.order = [
+                        ['name', 'ASC']
+                    ];
+            }
+>>>>>>> Stashed changes
         }
         Product
             .findAll(options)
