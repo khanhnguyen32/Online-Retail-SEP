@@ -46,8 +46,6 @@ controller.getAll = (query) => {
         }
         // if (query.min >= 0) {
 
-<<<<<<< Updated upstream
-=======
         // }
         if (query.limit > 0) {
             options.limit = query.limit;
@@ -75,7 +73,6 @@ controller.getAll = (query) => {
                         ['name', 'ASC']
                     ];
             }
->>>>>>> Stashed changes
         }
         Product
             .findAll(options)

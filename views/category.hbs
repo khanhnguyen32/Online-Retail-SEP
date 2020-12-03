@@ -1,47 +1,4 @@
 <script src="/vendors/nouislider/nouislider.min.js"></script>
-<<<<<<< Updated upstream
-	{{> banner}}
-
-
-	<!-- ================ category section start ================= -->		  
-  <section class="section-margin--small mb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-3 col-lg-4 col-md-5">
-          <div class="sidebar-categories">
-            <div class="head">Browse Categories</div>
-            <ul class="main-categories">
-              <li class="common-filter">
-                <form action="#">
-                  <ul>
-                    {{#each categories}}
-
- <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"><label for="category{{id}}" onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
-                    {{/each}}
-                  </ul>
-                </form>
-              </li>
-            </ul>
-          </div>
-          <div class="sidebar-filter">
-            <div class="top-filter-head">Product Filters</div>
-            <div class="common-filter">
-              <div class="head">Brands</div>
-              <form action="#">
-                <ul>
-                  {{#each brands}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="brand{{id}}" name="brand" onclick="selectParam('brand',{{id}})"><label for="brand{{id}}">{{name}}<span> ({{Products.length}})</span></label></li>
-                  {{/each}}
-                </ul>
-              </form>
-            </div>
-            <div class="common-filter">
-              <div class="head">Color</div>
-              <form action="#">
-                <ul>
-                  {{#each colors}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color" onclick="selectParam('color',{{id}})">{{name}}<span> ({{ProductColors.length}})</span></label></li>
-=======
 
 <section class="blog-banner-area" id="blog">
   <div class="container h-100">
@@ -76,7 +33,6 @@
                       name="category"><label for="category{{id}}"
                       onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label>
                   </li>
->>>>>>> Stashed changes
                   {{/each}}
                 </ul>
               </form>
@@ -124,28 +80,6 @@
             </div>
           </div>
         </div>
-<<<<<<< Updated upstream
-        <div class="col-xl-9 col-lg-8 col-md-7">
-          <!-- Start Filter Bar -->
-          <div class="filter-bar d-flex flex-wrap align-items-center">
-            <div class="sorting">
-              <select>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-              </select>
-            </div>
-            <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-              </select>
-            </div>
-            <div>
-              <div class="input-group filter-bar-search">
-                <input type="text" placeholder="Search">
-=======
       </div>
       <div class="col-xl-9 col-lg-8 col-md-7">
         <!-- Start Filter Bar -->
@@ -168,7 +102,6 @@
             <div class="input-group filter-bar-search">
               <form action="/products" method="GET">
                 <input type="text" name="search" placeholder="Search">
->>>>>>> Stashed changes
                 <div class="input-group-append">
                   <button type="button"><i class="ti-search"></i></button>
                 </div>
@@ -351,16 +284,6 @@
 </section>
 <!-- ================ Subscribe section end ================= -->
 <script>
-<<<<<<< Updated upstream
-    let urlParams = new URLSearchParams(location.search);
-    let params = {
-      category: 0,
-      brand: 0,
-      color: 0,
-      min: 0,
-      max: 100
-    };
-=======
   let urlParams = new URLSearchParams(location.search);
   let params = {
     category: 0,
@@ -373,7 +296,6 @@
     sort: 'name',
     search: ''
   };
->>>>>>> Stashed changes
 
   for (let key in params) {
     if (!urlParams.has(key)) {
@@ -381,22 +303,12 @@
     }
   }
 
-<<<<<<< Updated upstream
-  for (let key in params){
-=======
   let checkboxes = ['category', 'brand', 'color'];
   for (let key in checkboxes) {
->>>>>>> Stashed changes
     let control = $(`#${key}${urlParams.get(key)}`);
     if (control) {
       $(control).prop('checked', true);
     }
-<<<<<<< Updated upstream
-}
-    function selectParam(key, value, reset = false){
-      if (reset) {
-        for(let key in params){
-=======
   }
 
   $('#sort').val(urlParams.get('sort'));
@@ -405,7 +317,6 @@
   function selectParam(key, value, reset = false) {
     if (reset) {
       for (let key in params) {
->>>>>>> Stashed changes
         urlParams.set(key, params[key]);
       }
     }
