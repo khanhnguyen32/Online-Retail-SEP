@@ -1,147 +1,140 @@
 <script src="/vendors/nouislider/nouislider.min.js"></script>
 
-<section class="blog-banner-area" id="blog">
-  <div class="container h-100">
-    <div class="blog-banner">
-      <div class="text-center">
-        <h1>Products</h1>
-        <nav aria-label="breadcrumb" class="banner-breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Products</li>
-          </ol>
-        </nav>
+	<section class="blog-banner-area" id="blog">
+    <div class="container h-100">
+      <div class="blog-banner">
+        <div class="text-center">
+          <h1>Products</h1>
+          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Products</li>
+            </ol>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ================ category section start ================= -->
-<section class="section-margin--small mb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-3 col-lg-4 col-md-5">
-        <div class="sidebar-categories">
-          <div class="head">Browse Categories</div>
-          <ul class="main-categories">
-            <li class="common-filter">
+	<!-- ================ category section start ================= -->		  
+  <section class="section-margin--small mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5">
+          <div class="sidebar-categories">
+            <div class="head">Browse Categories</div>
+            <ul class="main-categories">
+              <li class="common-filter">
+                <form action="#">
+                  <ul>
+                    {{#each categories}}
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"><label for="category{{id}}" onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
+                    {{/each}}
+                  </ul>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-filter">
+            <div class="top-filter-head">Product Filters</div>
+            <div class="common-filter">
+              <div class="head">Brands</div>
               <form action="#">
                 <ul>
-                  {{#each categories}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}"
-                      name="category"><label for="category{{id}}"
-                      onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label>
-                  </li>
+                  {{#each brands}}
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="brand{{id}}" name="brand" onclick="selectParam('brand',{{id}})"><label for="brand{{id}}">{{name}}<span> ({{Products.length}})</span></label></li>
                   {{/each}}
                 </ul>
               </form>
-            </li>
-          </ul>
-        </div>
-        <div class="sidebar-filter">
-          <div class="top-filter-head">Product Filters</div>
-          <div class="common-filter">
-            <div class="head">Brands</div>
-            <form action="#">
-              <ul>
-                {{#each brands}}
-                <li class="filter-list"><input class="pixel-radio" type="radio" id="brand{{id}}" name="brand"
-                    onclick="selectParam('brand',{{id}})"><label for="brand{{id}}">{{name}}<span>
-                      ({{Products.length}})</span></label></li>
-                {{/each}}
-              </ul>
-            </form>
-          </div>
-          <div class="common-filter">
-            <div class="head">Color</div>
-            <form action="#">
-              <ul>
-                {{#each colors}}
-                <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color"
-                    onclick="selectParam('color',{{id}})"><label for="color{{id}}">{{name}}<span>
-                      ({{ProductColors.length}})</span></label></li>
-                {{/each}}
-              </ul>
-            </form>
-          </div>
-          <div class="common-filter">
-            <div class="head">Price</div>
-            <div class="price-range-area">
-              <div id="price-range"></div>
-              <div class="value-wrapper d-flex">
-                <div class="price">Price:</div>
-                <span>VNĐ</span>
-                <div id="lower-value"></div>
-                <div class="to">to</div>
-                <span>VNĐ</span>
-                <div id="upper-value"></div>
+            </div>
+            <div class="common-filter">
+              <div class="head">Color</div>
+              <form action="#">
+                <ul>
+                  {{#each colors}}
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color" onclick="selectParam('color',{{id}})"><label for="color{{id}}">{{name}}<span> ({{ProductColors.length}})</span></label></li>
+                  {{/each}}
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">Price</div>
+              <div class="price-range-area">
+                <div id="price-range"></div>
+                <div class="value-wrapper d-flex">
+                  <div class="price">Price:</div>
+                  <span>VNĐ</span>
+                  <div id="lower-value"></div>
+                  <div class="to">to</div>
+                  <span>VNĐ</span>
+                  <div id="upper-value"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xl-9 col-lg-8 col-md-7">
-        <!-- Start Filter Bar -->
-        <div class="filter-bar d-flex flex-wrap align-items-center">
-          <div class="sorting">
-            <select id="sort" onchange="selectParam('sort', this.value)">
-              <option value="name">Default sorting by name</option>
-              <option value="price">Sorting by price low to high</option>
-              <option value="overallReview">Sorting by reviews from high to low</option>
-            </select>
-          </div>
-          <div class="sorting mr-auto">
-            <select id="limit" onchange="selectParam('limit', this.value)">
-              <option value="9">Show 9</option>
-              <option value="18">Show 18</option>
-              <option value="36">Show 36</option>
-            </select>
-          </div>
-          <div>
-            <div class="input-group filter-bar-search">
-              <form action="/products" method="GET">
+        <div class="col-xl-9 col-lg-8 col-md-7">
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+              <select id="sort" onchange="selectParam('sort', this.value)">
+                <option value="name">Default sorting by name</option>
+                <option value="price">Sorting by price low to high</option>
+                <option value="overallReview">Sorting by reviews from high to low</option>
+              </select>
+            </div>
+            <div class="sorting mr-auto">
+              <select id="limit" onchange="selectParam('limit', this.value)">
+                <option value="9">Show 9</option>
+                <option value="18">Show 18</option>
+                <option value="36">Show 36</option>
+              </select>
+            </div>
+            <div>
+              <div class="input-group filter-bar-search">
+                <form action="/products" method="GET">
                 <input type="text" name="search" placeholder="Search">
                 <div class="input-group-append">
-                  <button type="button"><i class="ti-search"></i></button>
-                </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Filter Bar -->
-        <!-- Start Best Seller -->
-        <section class="lattest-product-area pb-40 category-list">
-          <div class="row">
-            {{#each products}}
-            <div class="col-md-6 col-lg-4">
-              <div class="card text-center card-product">
-                <div class="card-product__img">
-                  <img class="card-img" src="{{imagepath}}" alt="">
-                  <ul class="card-product__imgOverlay">
-                    <li><button><i class="ti-search"></i></button></li>
-                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                    <li><button><i class="ti-heart"></i></button></li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <p>{{Category.name}}</p>
-                  <h4 class="card-product__title"><a href="/products/{{id}}">{{name}}</a></h4>
-                  <p class="card-product__price">VNĐ{{price}}</p>
+                  <button type="submit"><i class="ti-search"></i></button>
                 </div>
               </div>
             </div>
-            {{/each}}
           </div>
-        </section>
-        <!-- End Best Seller -->
+          <!-- End Filter Bar -->
+          <!-- Start Best Seller -->
+          <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+              {{#each products}}
+              <div class="col-md-6 col-lg-4">
+                <div class="card text-center card-product">
+                  <div class="card-product__img">
+                    <img class="card-img" src="{{imagepath}}" alt="">
+                    <ul class="card-product__imgOverlay">
+                      <li><button><i class="ti-search"></i></button></li>
+                      <li><button><i class="ti-shopping-cart"></i></button></li>
+                      <li><button><i class="ti-heart"></i></button></li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <p>{{Category.name}}</p>
+                    <h4 class="card-product__title"><a href="/products/{{id}}">{{name}}</a></h4>
+                    <p class="card-product__price">VNĐ{{price}}</p>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </section>
+          <!-- End Best Seller -->
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- ================ category section end ================= -->
+  </section>
+	<!-- ================ category section end ================= -->		  
 
-<!-- ================ top product area start ================= -->
-{{!-- <section class="related-product-area">
+	<!-- ================ top product area start ================= -->	
+	{{!-- <section class="related-product-area">
 		<div class="container">
 			<div class="section-intro pb-60px">
         <p>Popular Item in the market</p>
@@ -254,75 +247,72 @@
       </div>
 		</div>
 	</section> --}}
-<!-- ================ top product area end ================= -->
+	<!-- ================ top product area end ================= -->		
 
-<!-- ================ Subscribe section start ================= -->
-<section class="subscribe-position">
-  <div class="container">
-    <div class="subscribe text-center">
-      <h3 class="subscribe__title">Get Update From Anywhere</h3>
-      <p>Bearing Void gathering light light his eavening unto dont afraid</p>
-      <div id="mc_embed_signup">
-        <form target="_blank"
-          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-          method="get" class="subscribe-form form-inline mt-5 pt-1">
-          <div class="form-group ml-sm-auto">
-            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
-              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
-            <div class="info"></div>
-          </div>
-          <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-          <div style="position: absolute; left: -5000px;">
-            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-          </div>
+	<!-- ================ Subscribe section start ================= -->		  
+  <section class="subscribe-position">
+    <div class="container">
+      <div class="subscribe text-center">
+        <h3 class="subscribe__title">Get Update From Anywhere</h3>
+        <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+        <div id="mc_embed_signup">
+          <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+            <div class="form-group ml-sm-auto">
+              <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
+              <div class="info"></div>
+            </div>
+            <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+            <div style="position: absolute; left: -5000px;">
+              <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+            </div>
 
-        </form>
+          </form>
+        </div>
+        
       </div>
-
     </div>
-  </div>
-</section>
-<!-- ================ Subscribe section end ================= -->
+  </section>
+	<!-- ================ Subscribe section end ================= -->		  
 <script>
-  let urlParams = new URLSearchParams(location.search);
-  let params = {
-    category: 0,
-    brand: 0,
-    color: 0,
-    min: 0,
-    max: 100,
-    limit: 9,
-    page: 1,
-    sort: 'name',
-    search: ''
-  };
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+      category: 0,
+      brand: 0,
+      color: 0,
+      min: 0,
+      max: 100,
+      limit: 9,
+      page: 1,
+      sort: 'name',
+      search: ''
+    };
 
-  for (let key in params) {
-    if (!urlParams.has(key)) {
-      urlParams.append(key, params[key]);
+    for(let key in params){
+      if (!urlParams.has(key)){
+        urlParams.append(key, params[key]);
+      }
     }
-  }
 
   let checkboxes = ['category', 'brand', 'color'];
-  for (let key in checkboxes) {
+  for (let key in checkboxes){
     let control = $(`#${key}${urlParams.get(key)}`);
     if (control) {
       $(control).prop('checked', true);
     }
-  }
+}
 
-  $('#sort').val(urlParams.get('sort'));
-  $('#limit').val(urlParams.get('limit'));
+$('#sort').val(urlParams.get('sort'));
+$('#limit').val(urlParams.get('limit'));
 
-  function selectParam(key, value, reset = false) {
-    if (reset) {
-      for (let key in params) {
+    function selectParam(key, value, reset = false){
+      if (reset) {
+        for(let key in params){
         urlParams.set(key, params[key]);
       }
     }
 
-    urlParams.set(key, value);
-    let url = `/products?${urlParams.toString()}`;
-    location.href = url;
-  }
+      urlParams.set(key, value);
+      let url = `/products?${urlParams.toString()}`;
+      location.href = url;
+    }
 </script>
