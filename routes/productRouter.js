@@ -12,10 +12,10 @@ router.get('/', (req, res, next) => {
     if ((req.query.color == null) || isNaN(req.query.color)) {
         req.query.color = 0;
     }
-    if ((req.query.min == null) || isNaN(req.query.color)) {
+    if ((req.query.min == null) || isNaN(req.query.min)) {
         req.query.min = 0;
     }
-    if ((req.query.max == null) || isNaN(req.query.color)) {
+    if ((req.query.max == null) || isNaN(req.query.max)) {
         req.query.max = 100;
     }
     if ((req.query.sort == null)) {
