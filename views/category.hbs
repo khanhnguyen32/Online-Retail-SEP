@@ -29,9 +29,9 @@
               <form action="#">
                 <ul>
                   {{#each categories}}
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}"
-                      name="category"><label for="category{{id}}"
-                      onclick="selectParam('category',{{id}}, true)">{{name}}<span> ({{Products.length}})</span></label>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category"
+                      onclick="selectParam('category',{{id}}, true)"><label for="category{{id}}"></label>{{name}}<span>
+                      ({{Products.length}})</span></label>
                   </li>
                   {{/each}}
                 </ul>
@@ -103,8 +103,9 @@
               <form action="/products" method="GET">
                 <input type="text" name="search" placeholder="Search">
                 <div class="input-group-append">
-                  <button type="button"><i class="ti-search"></i></button>
+                  <button type="submit"><i class="ti-search"></i></button>
                 </div>
+              </form>
             </div>
           </div>
         </div>
@@ -131,6 +132,11 @@
               </div>
             </div>
             {{/each}}
+          </div>
+          <div class="row justify-content-center">
+          <nav aria-label="Page navigation example" id="pagination">
+            {{{createPagination pagination paginationClass="pagination"}}}
+          </nav>
           </div>
         </section>
         <!-- End Best Seller -->
@@ -290,7 +296,7 @@
     brand: 0,
     color: 0,
     min: 0,
-    max: 100,
+    max: 100000000,
     limit: 9,
     page: 1,
     sort: 'name',
@@ -303,16 +309,32 @@
     }
   }
 
-  let checkboxes = ['category', 'brand', 'color'];
-  for (let key in checkboxes) {
-    let control = $(`#${key}${urlParams.get(key)}`);
-    if (control) {
-      $(control).prop('checked', true);
-    }
-  }
 
-  $('#sort').val(urlParams.get('sort'));
-  $('#limit').val(urlParams.get('limit'));
+  $(document).ready(() => {
+    let checkboxes = ['category', 'brand', 'color'];
+    for (let key in checkboxes) {
+      let control = $(`#${key}${urlParams.get(key)}`);
+      if (control) {
+        $(control).prop('checked', true);
+      }
+    }
+
+    $('#sort').val(urlParams.get('sort'));
+    $('#limit').val(urlParams.get('limit'));
+
+    $('#pagination li').addClass('page-item');
+    $('#pagination li a').addClass('page-link');
+    let savePage = urlParams.get('page');
+    $('#pagination li a').each((index, item) => {
+      let page = $(item).attr('href').split('=')[1];
+      urlParams.set('page', page);
+      let href = '/products?' + urlParams.toString();
+      $(item).attr('href', href);
+      
+    });
+    urlParams.set('page', savePage);
+  })
+
 
   function selectParam(key, value, reset = false) {
     if (reset) {

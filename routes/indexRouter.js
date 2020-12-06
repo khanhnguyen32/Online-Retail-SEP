@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
             res.locals.categories = data;
             let productController = require('../controllers/productController');
             return productController.getTrendingProducts();
-            res.render('index');
+
         })
         .then(data => {
             res.locals.trendingProducts = data;

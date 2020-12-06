@@ -3,6 +3,7 @@ let models = require('../models')
 let Product = models.Product;
 let Sequelize = require('sequelize');
 let Op = Sequelize.Op;
+
 controller.getTrendingProducts = () => {
     return new Promise((resolve, reject) => {
         Product
@@ -77,7 +78,7 @@ controller.getAll = (query) => {
             }
         }
         Product
-            .findAll(options)
+            .findAndCountAll(options)
             .then(data => resolve(data))
             .catch(error => reject(new Error(error)));
     });

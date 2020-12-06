@@ -15,12 +15,23 @@ router.get('/', (req, res, next) => {
         req.query.min = 0;
     }
     if ((req.query.max == null) || isNaN(req.query.max)) {
-        req.query.max = 100;
+        req.query.max = 100000000;
     }
- 
+    if ((req.query.sort == null)) {
+        req.query.sort = 'name';
+    }
+    if ((req.query.limit == null) || isNaN(req.query.limit)) {
+        req.query.limit = 9;
+    }
+    if ((req.query.page == null) || isNaN(req.query.page)) {
+        req.query.page = 1;
+    }
+    if ((req.query.search == null) || isNaN(req.query.search.trim() == '')) {
+        req.query.search = '';
+    }
     let categoryController = require('../controllers/categoryController');
     categoryController
-        .getAll()
+        .getAll(req.query)
         .then(data => {
             res.locals.categories = data;
             let brandController = require('../controllers/brandController');
@@ -38,7 +49,12 @@ router.get('/', (req, res, next) => {
             return productController.getAll(req.query);
         })
         .then(data => {
-            res.locals.products = data;
+            res.locals.products = data.rows;
+            res.locals.pagination = {
+                page: parseInt(req.query.page),
+                limit: parseInt(req.query.limit),
+                totalRows: data.count
+            }
             res.render('category');
         })
         .catch(error => next(error));
