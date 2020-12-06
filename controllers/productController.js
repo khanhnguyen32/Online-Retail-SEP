@@ -23,8 +23,10 @@ controller.getTrendingProducts = () => {
 controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
         let options = {
-            include: [{ model: models.Category }],
-            attributes: ['id', 'name', 'imagepath', 'price'],
+            include: [{ model: models.Category },
+                { model: models.Brand }
+            ],
+            attributes: ['id', 'name', 'imagepath', 'price', 'categoryId'],
             where: {
                 price: {
                     [Op.gte]: query.min,
