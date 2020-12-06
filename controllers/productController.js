@@ -49,9 +49,6 @@ controller.getAll = (query) => {
                 where: { colorId: query.color }
             });
         }
-        // if (query.min >= 0) {
-
-        // }
         if (query.limit > 0) {
             options.limit = query.limit;
             options.offset = query.limit * (query.page - 1);

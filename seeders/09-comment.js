@@ -28,7 +28,7 @@ module.exports = {
             },
             {
                 message: 'Áo xấu dị, có áo nào đẹp hơn không',
-                userId: 2,
+                userId: 4,
                 productId: 1,
                 parentCommentId: null
             }

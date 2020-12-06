@@ -3,6 +3,7 @@ let models = require('../models')
 let Category = models.Category;
 let Sequelize = require('sequelize');
 let Op = Sequelize.Op;
+
 controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
         let options = {
