@@ -3,7 +3,7 @@
 module.exports = {
     up: async(queryInterface, Sequelize) => {
         let data = [{
-                name: "white happy sunday shirt",
+                name: "White happy sunday shirt",
                 price: 15000000,
                 imagepath: "../img/products/hm-shirt-1.jpg",
                 thumbnailpath: '../img/products/hm-shirt-1.jpg',
@@ -24,6 +24,86 @@ module.exports = {
                 -100% silk
                 -Made in Italy
                 -The product shown in this image is a size 40 (IT)`,
+                overallReview: 4.5,
+                reviewCount: 2
+            },
+            {
+                name: "Fake love pink t-shirt",
+                price: 13000000,
+                imagepath: "../img/products/hm-top-1.jpg",
+                thumbnailpath: '../img/products/hm-top-1.jpg',
+                categoryId: 2,
+                brandId: 1,
+                availability: true,
+                sumary: "T-shirt in soft jersey.",
+                description: `
+                -Ivory silk crêpe de Chine
+                -Double G metal buttons
+                -This product contains organic silk where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -High neck
+                -Ruffled jabot
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40 (IT)
+                -100% silk
+                -Made in Italy
+                -The product shown in this image is a size 40 (IT)`,
+                overallReview: 4.5,
+                reviewCount: 2
+            },
+            {
+                name: "Anti school jogger",
+                price: 25000000,
+                imagepath: "../img/products/hm-trouser-1.jpg",
+                thumbnailpath: '../img/products/hm-trouser-1.jpg',
+                categoryId: 5,
+                brandId: 1,
+                availability: false,
+                sumary: "T-shirt in soft jersey.",
+                description: `
+                -Ivory silk crêpe de Chine
+                -Double G metal buttons
+                -This product contains organic silk where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -High neck
+                -Ruffled jabot
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40 (IT)
+                -100% silk
+                -Made in Italy
+                -The product shown in this image is a size 40 (IT)`,
+                overallReview: 4.5,
+                reviewCount: 2
+            },
+            {
+                name: "High-heel ankle boots with track soles",
+                price: 23000000,
+                imagepath: "../img/products/hm-shoes-1.jpg",
+                thumbnailpath: '../img/products/hm-shoes-1.jpg',
+                categoryId: 6,
+                brandId: 1,
+                availability: true,
+                sumary: "Black high-heel ankle boots. Block heel. Back pull tab. Track sole. Side zip fastening with pull tab.",
+                description: `
+                AIRFIT®. Flexible technical latex foam insole, designed to offer greater comfort.
+
+                Heel height: 11 cm. / 4.3″`,
+                overallReview: 4.5,
+                reviewCount: 2
+            },
+            {
+                name: "Not scared anything suede tote bag",
+                price: 35000000,
+                imagepath: "../img/products/hm-bag-1.jpg",
+                thumbnailpath: '../img/products/hm-bag-1.jpg',
+                categoryId: 7,
+                brandId: 1,
+                availability: true,
+                sumary: "Green leather tote bag. Leather exterior with a check print. Top handles. Detachable shoulder strap. Lining with pocket. Zip closure.",
+                description: `
+                Height x Length x Width 28 x 30 x 10,5 cm. / 11.0 x 11.8 x 4.1″`,
                 overallReview: 4.5,
                 reviewCount: 2
             },
@@ -73,8 +153,9 @@ module.exports = {
                 overallReview: 4,
                 reviewCount: 2
             },
+
             {
-                name: "fÈN Dress for Sleepy people",
+                name: "Fèn Dress for Sleepy people",
                 price: 10000000,
                 imagepath: '../img/products/adidas-dress-1.jpg',
                 thumbnailpath: '../img/products/adidas-dress-1.jpg',
@@ -115,6 +196,27 @@ module.exports = {
                     100% polyester`,
                 overallReview: 0,
                 reviewCount: 0
+            },
+            {
+                name: "So hot shirt",
+                price: 15999000,
+                imagepath: '../img/products/zara-top-1.jpg',
+                thumbnailpath: '../img/products/zara-top-1.jpg',
+                categoryId: 2,
+                brandId: 4,
+                availability: false,
+                sumary: "A shirt for lazy day but you still want to be elegant and luxurious.",
+                description: `
+                -Material: Cotton
+                -This product contains organic silk where the sericulture and manufacturing process restrict the use of chemicals, 
+                eliminate pesticides or artificial fertilizers and incorporate methods that respect biodiversity, improve soil quality, 
+                and reduce water consumption.
+                -High neck
+                -Long puff sleeves
+                -Length: 20.5" based on a size 40
+                -Made in Japan`,
+                overallReview: 4,
+                reviewCount: 2
             },
             {
                 name: "Game on CONTRAST STRIPE Shirt",
