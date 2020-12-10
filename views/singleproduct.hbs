@@ -190,19 +190,18 @@
 							<div class="review_box">
 								<h4>Add a Review</h4>
 								<p>Your Rating:</p>
-								<ul class="list">
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
+								<ul class="list" id="starList">
+									<li><a><i class="fa fa-star"></i></a></li>
+									<li><a><i class="fa fa-star"></i></a></li>
+									<li><a><i class="fa fa-star"></i></a></li>
+									<li><a><i class="fa fa-star"></i></a></li>
+									<li><a><i class="fa fa-star disabled"></i></a></li>
 								</ul>
-								<p>Outstanding</p>
+								<p id="starName">Outstanding</p>
                 <form action="/reviews" method="POST" class="form-contact form-review mt-3">
                   <div class="form-group">
 					  	<input type="hidden" name="productId" value="{{id}}">
 						<input type="hidden" name="rating" id="rating">
-
                   </div>
                   <div class="form-group">
                     <textarea class="form-control different-control w-100" name="message" cols="30" rows="5" placeholder="Enter Message"></textarea>
@@ -349,8 +348,52 @@
 			$('#reply').html('');
 			$('#parentCommentId').val('');
 		}
+
+		function checkStars(){
+			let rating = getRating(this);
+			$('#rating').val(rating);
+			showStars(rating);
+		}
+		function highlightStars() {
+			let rating = getRating(this);
+			showStars(rating);
+		}
+
+		function resetStars() {
+			let rating = $('#rating').val();
+			showStars(rating);
+		}
+
+		function getRating(star){
+			let stars = $('#starList i');
+			let i = 0;
+			for (i=0; i<5; i++){
+				if($(stars[i]).get(0) == star){
+					return (i+1);
+					break;
+				}
+			}
+			return i;
+		}
+
+		function showStars(rating){
+			let stars = $('#starList i');
+			let i = 0;
+			for(i=0; i<5; i++){
+				$(stars[i]).removeClass('disabled');
+			}
+			for(i=rating; i<5; i++){
+				$(stars[i]).addClass('disabled');
+			}
+			let starNames = ['Please rating this product!','Worst','Bad','Ok', 'Good', 'Outstanding'];
+			$('#starName').html(starNames[rating]);
+		}
+
 		$(document).ready(() => {
 			$('#closeButton').hide();
+			$('#starList i').on('click', checkStars);
+			$('#starList i').on('mouseover', highlightStars);
+			$('#starList i').on('mouseout', resetStars);
 		});
 
 	</script>
