@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/indexRouter'));
 app.use('/products', require('./routes/productRouter'));
 app.use('/cart', require('./routes/cartRouter'));
-
+app.use('/users', require('./routes/userRouter'));
 app.get('/sync', (req, res) => {
     let models = require('./models');
     models.sequelize.sync()

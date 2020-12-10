@@ -10,7 +10,7 @@
 						<div class="hover">
 							<h4>New to our website?</h4>
 							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-							<a class="button button-account" href="register.html">Create an Account</a>
+							<a class="button button-account" href="/users/register">Create an Account</a>
 						</div>
 					</div>
 				</div>
@@ -18,6 +18,11 @@
 					<div class="login_form_inner">
 						<h3>Log in to enter</h3>
 						<form class="row login_form" action="#/" id="contactForm" >
+						{{#if message}}
+						<div class="col-md-12 form-group alert {{type}}">
+						<strong>{{message}}</strong>
+						</div> 
+						{{/if}}
 							<div class="col-md-12 form-group">
 								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
 							</div>
