@@ -5,6 +5,31 @@ let userController = require('../controllers/userController');
 router.get('/login', (req, res) => {
     res.render('login');
 });
+
+router.post('/login', (req, res, next) => {
+    let email = req.body.username;
+    let password = req.body.password;
+    userController
+        .getUserByEmail(email)
+        .then(user => {
+            if (user) {
+                if (userController.comparePassword(password, user.password)) {
+                    req.session.user = user;
+                    res.redirect('/');
+                } else {
+                    res.render('login', {
+                        message: "Incorrect Password!",
+                        type: 'alert-danger'
+                    });
+                }
+            } else {
+                res.render('login', {
+                    message: 'Email does not exist!',
+                    type: 'alert-danger'
+                });
+            }
+        })
+});
 router.get('/register', (req, res) => {
     res.render('register');
 });
@@ -43,7 +68,7 @@ router.post('/register', (req, res, next) => {
                 .then(user => {
                     if (keepLoggedIn) {
                         req.session.user = user;
-                        res.render('/');
+                        res.redirect('/');
                     } else {
                         return res.render('login', {
                             message: 'Register Done! You can login now',
@@ -55,4 +80,13 @@ router.post('/register', (req, res, next) => {
         })
         .catch(error => next(error));
 });
+router.get('/logout', (req, res, next) => {
+    req.session.destroy(error => {
+        if (error) {
+            return next(error)
+        };
+        return res.redirect('/users/login');
+    })
+})
+
 module.exports = router;

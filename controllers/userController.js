@@ -15,4 +15,7 @@ controller.createUser = (user) => {
     return User.create(user);
 };
 
+controller.comparePassword = (password, hash) => {
+    return bcrypt.compareSync(password, hash);
+};
 module.exports = controller;
