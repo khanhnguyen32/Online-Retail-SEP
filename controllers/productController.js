@@ -124,7 +124,7 @@ controller.getById = (id) => {
                 product.stars = stars;
                 resolve(product);
             })
-            .catch(error => reject(new Error(error)));
+            //.catch(error => reject(new Error(error)));
     });
 };
 module.exports = controller;

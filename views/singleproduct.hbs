@@ -201,7 +201,7 @@
                 <form action="/reviews" method="POST" class="form-contact form-review mt-3">
                   <div class="form-group">
 					  	<input type="hidden" name="productId" value="{{id}}">
-						<input type="hidden" name="rating" id="rating">
+						<input type="hidden" name="rating" id="rating" value="0">
                   </div>
                   <div class="form-group">
                     <textarea class="form-control different-control w-100" name="message" cols="30" rows="5" placeholder="Enter Message"></textarea>
@@ -394,6 +394,8 @@
 			$('#starList i').on('click', checkStars);
 			$('#starList i').on('mouseover', highlightStars);
 			$('#starList i').on('mouseout', resetStars);
+			resetStars();
+		
 		});
 
 	</script>
