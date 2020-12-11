@@ -67,6 +67,11 @@ router.get('/:id', (req, res, next) => {
         .getById(req.params.id)
         .then(product => {
             res.locals.product = product;
+            let reviewController = require('../controllers/reviewController');
+            return reviewController.getUserReviewProduct(1, req.params.id);
+        })
+        .then(review =>{
+            res.locals.userReview = review;
             res.render('singleproduct');
         })
         .catch(error => next(error));

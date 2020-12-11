@@ -53,4 +53,13 @@ controller.add = (review) => {
             .catch(error => reject(new Error(error)));
     });
 };
+
+controller.getUserReviewProduct = (userId, productId) => {
+    return Review.findOne({
+        where:{
+            userId,
+            productId
+        }
+    });
+};
 module.exports = controller;
