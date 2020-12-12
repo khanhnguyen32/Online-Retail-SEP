@@ -117,7 +117,7 @@ controller.getById = (id) => {
             })
             .then(reviews => {
                 product.Reviews = reviews;
-               
+
                 let stars = [];
                 for (let i = 1; i <= 5; i++) {
                     stars.push(reviews.filter(item => (item.rating == i)).length);
@@ -125,7 +125,7 @@ controller.getById = (id) => {
                 product.stars = stars;
                 resolve(product);
             })
-            //.catch(error => reject(new Error(error)));
+            .catch(error => reject(new Error(error)));
     });
 };
 module.exports = controller;
