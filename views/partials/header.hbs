@@ -17,31 +17,28 @@
               <li class="nav-item active"><a class="nav-link" href="/products">Shop</a></li>
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
+                  aria-expanded="false">Magazine</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/singleblog">Blog Details</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/blog">Sustainability</a></li>
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
+                  aria-expanded="false">More</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/category">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/singleproduct">Product Details</a></li>
                   <li class="nav-item"><a class="nav-link" href="/checkout">Product Checkout</a></li>
                   <li class="nav-item"><a class="nav-link" href="/confirmation">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/cart">Shopping Cart</a></li>
                   <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                   <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                   <li class="nav-item"><a class="nav-link" href="/trackingorder">Tracking</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+              
               {{#if isLoggedIn}}
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">{{fullname}}</a>
+                  aria-expanded="false"><span style="font-size: 14px">{{fullname}}</span></a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="/users/logout">Logout</a></li>
                 </ul>
