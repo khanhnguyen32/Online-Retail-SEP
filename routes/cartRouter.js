@@ -7,6 +7,7 @@ router.get('/', (req, res, next) => {
     res.render('cart');
 });
 
+
 router.post('/', (req, res, next) => {
     var productId = req.body.id;
     var quantity = isNaN(req.body.quantity) ? 1 : req.body.quantity;

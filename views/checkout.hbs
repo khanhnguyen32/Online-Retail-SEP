@@ -1,10 +1,9 @@
-{{> banner}}
-  
+
   
   <!--================Checkout Area =================-->
   <section class="checkout_area section-margin--small">
     <div class="container">
-        <div class="returning_customer">
+        {{!-- <div class="returning_customer">
             <div class="check_title">
                 <h2>Returning Customer? <a href="#">Click here to login</a></h2>
             </div>
@@ -28,21 +27,21 @@
                     <a class="lost_pass" href="#">Lost your password?</a>
                 </div>
             </form>
-        </div>
-        <div class="cupon_area">
+        </div> --}}
+        {{!-- <div class="cupon_area">
             <div class="check_title">
                 <h2>Have a coupon? <a href="#">Click here to enter your code</a></h2>
             </div>
             <input type="text" placeholder="Enter coupon code">
             <a class="button button-coupon" href="#">Apply Coupon</a>
-        </div>
+        </div> --}}
         <div class="billing_details">
             <div class="row">
                 <div class="col-lg-8">
                     <h3>Billing Details</h3>
                     <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="first" name="name">
+                            <input type="text" class="form-control" id="first" name="name" placeholder="First name">
                             <span class="placeholder" data-placeholder="First name"></span>
                         </div>
                         <div class="col-md-6 form-group p_star">
@@ -107,12 +106,12 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="order_box">
+                        
                         <h2>Your Order</h2>
+                        {{#each items}}
                         <ul class="list">
                             <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
-                            <li><a href="#">Fresh Blackberry <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                            <li><a href="#">Fresh Tomatoes <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                            <li><a href="#">Fresh Brocoli <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
+                            <li><a href="#">{{item.name}} <span class="middle">x {{quantity}}</span> <span class="last">{{price}}</span></a></li>
                         </ul>
                         <ul class="list list_2">
                             <li><a href="#">Subtotal <span>$2160.00</span></a></li>
@@ -128,6 +127,7 @@
                             <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
                                 Store Postcode.</p>
                         </div>
+                        {{/each}}
                         <div class="payment_item active">
                             <div class="radion_btn">
                                 <input type="radio" id="f-option6" name="selector">
