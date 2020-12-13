@@ -65,3 +65,16 @@ function clearCart() {
         });
     }
 }
+
+function clearCart2() {
+    if (confirm('Are you sure about the information?')) {
+        $.ajax({
+            url: '/cart/all',
+            type: 'DELETE',
+            success: function() {
+                $('#cart-badge').html(0);
+                $('#cart-body').html(`<div class="alert alert-info text-center"> Your cart is empty!</div>`);
+            }
+        });
+    }
+}
