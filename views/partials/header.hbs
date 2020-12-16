@@ -21,8 +21,10 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">More</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/trackingorder">Tracking</a></li>
+                  {{!-- <li class="nav-item"><a class="nav-link" href="/trackingorder">Tracking</a></li> --}}
+                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                   <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                  
                 </ul>
               </li>
               
@@ -40,7 +42,7 @@
             </ul>
 
             <ul class="nav-shop">
-              <li class="nav-item"><button onclick="location.href='/products'"><i class="ti-search"></i></button></li>
+              {{!-- <li class="nav-item"><button onclick="location.href='/products'"><i class="ti-search"></i></button></li> --}}
               <li class="nav-item"><button onclick="location.href='/cart'"><i class="ti-shopping-cart"></i><span class="nav-shop__circle" id="cart-badge">{{totalQuantity}}</span></button> </li>
               <li class="nav-item"><a class="button button-header" href="/cart">Buy Now</a></li>
             </ul>
