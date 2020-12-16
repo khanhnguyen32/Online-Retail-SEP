@@ -115,7 +115,7 @@ $(function() {
         nonLinearSlider.noUiSlider.on('end', function(values, handle, unencoded, isTap, positions) {
             let value = values[handle];
             let keys = ['min', 'max'];
-            selectParams(keys[handle], value);
+            selectParam(keys[handle], value);
 
         });
     }
