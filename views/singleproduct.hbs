@@ -85,9 +85,9 @@
 											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
-											<h4>{{User.username}}</h4>
+											<h4>{{User.fullname}}</h4>
 											<h5>{{createdAt}}</h5>
-											<a class="reply_btn" onclick="showReply({{id}}, '{{User.username}}')">Reply</a>
+											<a class="reply_btn" onclick="showReply({{id}}, '{{User.fullname}}')">Reply</a>
 										</div>
 									</div>
 									<p>{{message}}</p>
@@ -99,9 +99,9 @@
 											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
-											<h4>{{User.username}}</h4>
+											<h4>{{User.fullname}}</h4>
 											<h5>{{createdAt}}</h5>
-											<a class="reply_btn" onclick="showReply({{../id}}, '{{User.username}}')">Reply</a>
+											<a class="reply_btn" onclick="showReply({{../id}}, '{{User.fullname}}')">Reply</a>
 										</div>
 									</div>
 									<p>{{message}}</p>
@@ -167,7 +167,7 @@
 											<img src="{{User.avatarPath}}" alt="" width="50" height="50">
 										</div>
 										<div class="media-body">
-											<h4>{{User.username}}</h4>
+											<h4>{{User.fullname}}</h4>
 											{{{createStars rating}}}
 										</div>
 									</div>
