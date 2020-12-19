@@ -11,7 +11,6 @@
                 "rejectUnauthorized": false
             }
         }
-
     },
     "test": {
         "username": "postgres",
