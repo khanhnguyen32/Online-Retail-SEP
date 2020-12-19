@@ -20,10 +20,16 @@
         "dialect": "postgres"
     },
     "production": {
-        "username": "postgres",
-        "password": "postgres",
-        "database": "lazydb",
-        "host": "localhost",
-        "dialect": "postgres"
+        "username": "pvfbwprbfaimyh",
+        "password": "1f457691c621e59afe1fd89e44b83a35eb985093bc814603d6e449f2e0a30f80",
+        "database": "da1a2bfefdsnai",
+        "host": "ec2-18-211-86-133.compute-1.amazonaws.com",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
     }
 }
