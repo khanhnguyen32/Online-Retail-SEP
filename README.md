@@ -4,6 +4,8 @@ This is the Demo of Online Retail Web Application of Women Fashion. The purpose 
 
 
 INFO
+
 Project 1 semester of Software Engineering Course _ School of Computer Science & Engineering.
 International University - Vietnam National University - Ho Chi Minh City.
+
 Developed by: --- Nguyen Quoc Khanh (Leader) --- Tran Quoc Thinh --- Nguyen Ngoc Mai Oanh
